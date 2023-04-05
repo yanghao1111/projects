@@ -1,0 +1,33 @@
+{% extends 'reader.html' %}
+{% block content %}
+    <div style="float: right"><input type="search" style="width: 300px">
+        <span class="btn btn-success" href="/index/borrow">
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            搜索
+            </span></div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>书籍编号</th>
+            <th>书名</th>
+            <th>IBSN码</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for obj in queryset %}
+            <tr>
+                <td>{{ obj.bkID }}</td>
+                <td>{{ obj.bkName }}</td>
+                <td>{{ obj.bkCode }}</td>
+                <td>{{ obj.bkStatus }}</td>
+                <td>
+                    <a class="btn btn-primary btn-xs" href="/index/{{ obj.bkID }}/borrow">借书</a>
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}

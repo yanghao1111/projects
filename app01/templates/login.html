@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1 style="position: absolute;left: 45%">图书管理系统</h1>
+<div style="margin-top: 70px;left: 40%;position: absolute">
+{#    action="/login/index"#}
+    <form method="post" action="/login/">
+    {% csrf_token %}
+    <input type="text" name="user" placeholder="用户名">
+    <input type="password" name="pwd" placeholder="密码">
+    <input type="submit" value="提交"/>
+    <span style="color: red;" >{{ error_msg }}</span>
+</form>
+</div>
+
+</body>
+</html>

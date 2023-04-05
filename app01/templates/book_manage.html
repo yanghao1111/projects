@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <div class="container">
+        <a class="btn btn-success" href="/index/book_list">
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true" href="/index/book_list"></span>
+            图书列表
+        </a>
+        <a class="btn btn-success" href="/index/book_add">
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true" href="/index/book_add"></span>
+            添加图书
+        </a>
+        <br>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> 图书管理 </h3>
+            </div>
+             <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>书籍编号</th>
+                    <th>书名</th>
+                    <th>IBSN码</th>
+                    <th>状态</th>
+                    <th>作者</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in queryset %}
+                    <tr>
+                        <td>{{ obj.bkID }}</td>
+                        <td>{{ obj.bkName }}</td>
+                        <td>{{ obj.bkCode }}</td>
+                        <td>{{ obj.bkStatus }}</td>
+                        <td>{{ obj.bkAuthor }}</td>
+                        <td>
+                            <a class="btn btn-primary btn-xs" href="/index/{{ obj.bkID }}/book_edit">编辑</a>
+                            <a class="btn btn-danger btn-xs" href="/index/{{ obj.bkID }}/book_delete">删除</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}

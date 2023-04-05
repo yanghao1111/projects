@@ -1,0 +1,35 @@
+{% extends 'reader.html' %}
+{% block content %}
+    <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> 借阅信息 </h3>
+            </div>
+             <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>借书顺序号</th>
+                    <th>读者</th>
+                    <th>书籍</th>
+                    <th>可借阅时间</th>
+                    <th>借书时间</th>
+                    <th>应还书日期</th>
+                    <th>还书</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in queryset %}
+                    <tr>
+                        <td>{{ obj.BorrowID }}</td>
+                        <td>{{ obj.rdID }}</td>
+                        <td>{{ obj.bkID }}</td>
+                        <td>{{ obj.IdContinueTimes}}</td>
+                        <td>{{ obj.ldDateOut }}</td>
+                        <td>{{ obj.ldDateRetAct}}</td>
+                    <td><a class="btn btn-danger btn-xs" href="/index/{{ obj.BorrowID }}/borrow_delete">删除</a></td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+{% endblock %}

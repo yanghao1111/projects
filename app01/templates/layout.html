@@ -1,0 +1,114 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta http-equiv="X-UA-Compatible" content="IE=edge">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <title>Document</title>#}
+{#    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">#}
+{#    <link rel="stylesheet" href="../static/plugins/bootstrap-3.4.1/css/bootstrap.min.css">#}
+{#    <link rel="stylesheet" href="../static/css/index.css">#}
+{#</head>#}
+{##}
+{#<body>#}
+{##}
+{#    <div class="navbar">#}
+{#        <input checked type="checkbox" id="cb">#}
+{#        <label for="cb">#}
+{#            <i class="fa fa-bars"></i>#}
+{#        </label>#}
+{#        <ul>#}
+{#            <li>#}
+{#                <a href="#">#}
+{#                    <img src="../static/img/1.jpg" alt="">#}
+{#                    <span>您好,管理员</span>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li>#}
+{#                <a href="#">#}
+{#                    <i class="fa fa-home"></i>#}
+{#                    <span>主页</span>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li>#}
+{#                <a href="student_manage.html">#}
+{#                    <i class="fa fa-gift"></i>#}
+{#                    <span>读者管理</span>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li>#}
+{#                <a href="#">#}
+{#                    <i class="fa fa-heartbeat"></i>#}
+{#                    <span>图书管理</span>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li>#}
+{#                <a href="#">#}
+{#                    <i class="fa fa-paper-plane"></i>#}
+{#                    <span>借阅管理</span>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li>#}
+{#                <a href="#">#}
+{#                    <i class="fa fa-area-chart "></i>#}
+{#                    <span>用户登录与管理</span>#}
+{#                </a>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </div>#}
+{#<div>#}
+{#    {% block content %}#}
+{##}
+{#    {% endblock %}#}
+{#</div>#}
+{##}
+{##}
+{##}
+{#</body>#}
+{##}
+{#</html>#}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1/css/bootstrap.min.css' %}">
+    <style>
+        .navbar {
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">图书管理系统 </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/index/student_manage">读者管理</a></li>
+                <li><a href="/index/book_manage">图书管理</a></li>
+                <li><a href="/index/borrow_manage">借阅管理</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div>
+    {% block content %}{% endblock %}
+</div>
+
+
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap-3.4.1/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

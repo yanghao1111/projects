@@ -1,0 +1,41 @@
+{% extends 'reader.html' %}
+{% block content %}
+
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>读者类型</th>
+            <th>读者单位</th>
+            <th>电话</th>
+            <th>邮箱</th>
+            <th>登记日期</th>
+            <th>状态</th>
+            <th>可借书天数</th>
+            <th>密码</th>
+            <th>权限</th>
+        </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ queryset.rdID }}</td>
+                <td>{{ queryset.rdName }}</td>
+                <td>{{ queryset.rdSex }}</td>
+                <td>{{ queryset.rdType }}</td>
+                <td>{{ queryset.rdDept }}</td>
+                <td>{{ queryset.rdPhone }}</td>
+                <td>{{ queryset.rdEmail }}</td>
+                <td>{{ queryset.rdDateReg }}</td>
+                <td>{{ queryset.rdStatus }}</td>
+                <td>{{ queryset.rdBorrowQty }}</td>
+                <td>{{ queryset.rdPwd }}</td>
+                <td>{{ queryset.rdAdminRoles }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+{% endblock %}
